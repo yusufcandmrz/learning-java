@@ -11,7 +11,8 @@ public class ControlStatements {
 
     public static void main(String[] args) {
 
-        // If Statement
+        // JAVA CONTROL STATEMENTS
+        /* // If Statement
         int x = 10;
         int y = 12;
         if (x + y > 20) {
@@ -123,6 +124,84 @@ public class ControlStatements {
                 continue;
             }
             System.out.println("Number9 is " + number9);
+        } */
+        
+        
+        
+        // *********************************************************************
+        // *********************************************************************
+        // *********************************************************************
+        // JAVA IF-ELSE
+        // if Statement
+        int number = 20;
+        if (number > 18) {
+            System.out.println("number is greater than 18");
+        }
+        
+        // if-else Statement
+        int number2 = 13;
+        if (number % 2 == 2) {
+            System.out.println("number2 is even number");
+        } else {
+            System.out.println("number2 is odd number");
+        }
+        
+        int currentYear = 2024;
+        if (currentYear % 4 == 0 && currentYear % 100 != 0 || currentYear % 400 == 0) {
+            System.out.println("currentYear is leap year");
+        } else {
+            System.out.println("currentYear is common year");
+        }
+        
+        // Ternary Operator
+        int number3 = 13;
+        String output = (number3 % 2 == 0) ? "even number" : "odd number";
+        System.out.println("number3 is " + output);
+        
+        // if-else-if ladder Statement
+        int mark = 65;
+        if (mark < 50) {
+            System.out.println("fail");
+        } else if (mark >= 50 && mark < 60) {
+            System.out.println("D grade");
+        } else if (mark >= 60 && mark < 70) {
+            System.out.println("C grade");
+        } else if (mark >= 70 && mark < 80) {
+            System.out.println("B grade");
+        } else if (mark >= 80 && mark < 90) {
+            System.out.println("A grade");
+        } else if (mark >= 90 && mark <= 100) {
+            System.out.println("A+ grade");
+        } else {
+            System.out.println("invalid!");
+        }
+        
+        int number4 = -13;
+        if (number4 > 0) {
+            System.out.println("POSITIVE");
+        } else if (number4 < 0) {
+            System.out.println("NEGATIVE");
+        } else {
+            System.out.println("ZERO");
+        }
+        
+        // Nested if Statement
+        int age = 25;
+        int weight = 100;
+        if (age > 18) {
+            if (weight > 50) {
+                System.out.println("You are eligible to donate blood");
+            }
+        }
+        
+        if (age > 18) {
+            if (weight > 50) {
+                System.out.println("You are eligible to donate blood");
+            } else {
+                System.out.println("You are not eligible to donate blood");
+            }
+        } else {
+            System.out.println("Age must be greater than 18");
         }
     }
 }
