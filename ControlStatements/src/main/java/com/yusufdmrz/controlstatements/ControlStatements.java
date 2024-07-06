@@ -3,11 +3,15 @@
  */
 package com.yusufdmrz.controlstatements;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author Yusuf
  */
 public class ControlStatements {
+    
+    public enum Day {Sun, Mon, Tue, Wed, Thu, Fri, Sat}
 
     public static void main(String[] args) {
 
@@ -133,7 +137,7 @@ public class ControlStatements {
         // *********************************************************************
         // JAVA IF-ELSE
         // if Statement
-        int number = 20;
+        /* int number = 20;
         if (number > 18) {
             System.out.println("number is greater than 18");
         }
@@ -202,6 +206,214 @@ public class ControlStatements {
             }
         } else {
             System.out.println("Age must be greater than 18");
+        } */
+        
+        
+        
+        // *********************************************************************
+        // *********************************************************************
+        // *********************************************************************
+        // JAVA SWITCH
+        // Switch Statement
+        /* int number5 = 20;
+        switch (number5) {
+            case 10:
+                System.out.println("number5 is 10");
+                break;
+            case 20:
+                System.out.println("number5 is 20");
+                break;
+            case 30:
+                System.out.println("number5 is 30");
+                break;
+            default:
+                System.out.println("Not in 10, 20 or 30");
         }
+        
+        // Finding Month
+        int month = 7;
+        String monthString = "";
+        switch (month) {
+            case 1:
+                monthString = "1 - January";
+                break;
+            case 2:
+                monthString = "2 - February";
+                break;
+            case 3:
+                monthString = "3 - March";
+                break;
+            case 4:
+                monthString = "4 - April";
+                break;
+            case 5:
+                monthString = "5 - May";
+                break;
+            case 6:
+                monthString = "6 - June";
+                break;
+            case 7:
+                monthString = "7 - July";
+                break;
+            case 8:
+                monthString = "8 - August";
+                break;
+            case 9:
+                monthString = "9 - September";
+                break;
+            case 10:
+                monthString = "10 - October";
+                break;
+            case 11:
+                monthString = "11 - November";
+                break;
+            case 12:
+                monthString = "12 - December";
+                break;
+            default:
+                System.out.println("Invalid month!");
+        }
+        System.out.println(monthString);
+        
+        // Check Vowel or Consonant
+        char ch = 'O';
+        String result = switch (ch) {
+            case 'a', 'A' ->
+                "Vowel";
+            case 'e', 'E' ->
+                "Vowel";
+            case 'i', 'I' ->
+                "Vowel";
+            case 'o', 'O' ->
+                "Vowel";
+            case 'u', 'U' ->
+                "Vowel";
+            default ->
+                "Consonant";
+        };
+        System.out.println("ch is " + result);
+        
+        // Fall-through
+        int number6 = 20;
+        switch (number6) {
+            case 10:
+                System.out.println("number6 is 10");
+            case 20:
+                System.out.println("number6 is 20");
+            case 30:
+                System.out.println("number6 is 30");
+            default:
+                System.out.println("Not in 10, 20 or 30");
+        }
+        
+        // Statement with String
+        String levelString = "Expert";
+        int level = switch (levelString) {
+            case "Beginner" ->
+                1;
+            case "Intermediate" ->
+                2;
+            case "Expert" ->
+                3;
+            default ->
+                0;
+        };
+        System.out.println("Your level is " + level);
+        
+        // Nested Switch Statement
+        char branch = 'C';
+        int collegeYear = 4;
+        switch (collegeYear) {
+            case 1 -> {
+                System.out.println("English, Maths, Science");
+            }
+            case 2 -> {
+                switch (branch) {
+                    case 'C' -> {
+                        System.out.println("Operating System, Java, Data Structure");
+                    }
+                    case 'E' -> {
+                        System.out.println("Micro processors, Logic swithing theory");
+                    }
+                    case 'M' -> {
+                        System.out.println("Drawing, Manufacturing Machines");
+                    }
+                }
+            }
+            case 3 -> {
+                switch (branch) {
+                    case 'E' -> {
+                        System.out.println("Fundamentalss of Logic Design, Microelectronics");
+                    }
+                    case 'M' -> {
+                        System.out.println("Internal Combustion Engines, Mechanical Vibration");
+                    }
+                }
+            }
+            case 4 -> {
+                switch (branch) {
+                    case 'C' -> {
+                        System.out.println("Data Communication and Networks, MultiMedia");
+                    }
+                    case 'E' -> {
+                        System.out.println("Embedded System, Image Processing");
+                    }
+                    case 'M' -> {
+                        System.out.println("Production Technology, Thernal Engineering");
+                    }
+                }
+            }
+        }
+        
+        // Enum in Switch Statement
+        Day[] DayNow = Day.values();
+        for (Day now : DayNow) {
+            switch (now) {
+                case Sun -> {
+                    System.out.println("Sunday");
+                }
+                case Mon -> {
+                    System.out.println("Monday");
+                }
+                case Tue -> {
+                    System.out.println("Tuesday");
+                }
+                case Wed -> {
+                    System.out.println("Wednesday");
+                }
+                case Thu -> {
+                    System.out.println("Thursday");
+                }
+                case Fri -> {
+                    System.out.println("Friday");
+                }
+                case Sat -> {
+                    System.out.println("Saturday");
+                }
+            }
+        }
+        
+        // Wrapper in Switch Statement
+        Integer age = 18;
+        switch (age) {
+            case (16) -> {
+                System.out.println("You are under 18");
+            }
+            case (18) -> {
+                System.out.println("You are eligible for vote");
+            }
+            case (65) -> {
+                System.out.println("You are senior citizen");
+            }
+            default -> {
+                System.out.println("Please five the valid age");
+            }
+        } */
+        
+        
+        
+        // *********************************************************************
+        // *********************************************************************
+        // *********************************************************************
     }
 }
