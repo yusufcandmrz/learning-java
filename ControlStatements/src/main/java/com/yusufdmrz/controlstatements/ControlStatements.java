@@ -415,5 +415,62 @@ public class ControlStatements {
         // *********************************************************************
         // *********************************************************************
         // *********************************************************************
+        // JAVA FOR LOOP
+        // Simple for Loop
+        /* for (int i = 1; i < 10; i++) {
+            System.out.println(i);
+        }
+        
+        // Nested for Loop
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        
+        // Pyramid
+        for (int i = 1; i <= 5; i++) {
+            for(int j = 1; j <= i; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        
+        // Pyramid II
+        for (int i = 1; i <= 5; i++) {
+            for(int j = 5; j >= i; j--){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        
+        // ForEach
+        int[] arr = {12, 24, 36, 48, 60, 72, 84, 96};
+        for (int number : arr) {
+            System.out.println("number is -> " + number);
+        }
+        
+        // Labeled for
+        aa:
+        for (int i = 1; i <= 3; i++) {
+            bb:
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    break aa;
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        
+        // Infinitive for Loop
+        // for(;;){
+        //    System.out.println("infinitive loop");
+        // } */
+        
+        
+        
+        // *********************************************************************
+        // *********************************************************************
+        // *********************************************************************
     }
 }
