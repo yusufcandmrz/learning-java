@@ -472,5 +472,149 @@ public class ControlStatements {
         // *********************************************************************
         // *********************************************************************
         // *********************************************************************
+        // JAVA WHILE LOOP
+        /* int i = 1;
+        while (i < 10) {
+            System.out.println(i);
+            i++;
+        }
+        
+        // Infinitive While Loop
+        // while (true) {
+        //    System.out.println("Infinitive Loop");
+        // } */
+        
+        
+        
+        // *********************************************************************
+        // *********************************************************************
+        // *********************************************************************
+        // JAVA DO-WHILE LOOP
+        /* int number = 1;
+        do {
+            System.out.println(number);
+            number++;
+        } while (number < 10);
+        
+        // do {
+        //    System.out.println("Infinitive Loop");
+        // } while (true);*/ 
+        
+        
+        
+        // *********************************************************************
+        // *********************************************************************
+        // *********************************************************************
+        // JAVA BREAK
+        /* for (int i = 1; i < 10; i++) {
+            if (i == 5) {
+                break;
+            }
+            System.out.println(i);
+        }
+        
+        // Break Statement with Inner Loop
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    break;
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        
+        System.out.println("*************************************************");
+        // Break Statement with Labeled For Loop
+        aa:
+        for (int i = 1; i <= 3; i++) {
+            bb:
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    break aa;
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        
+        // Break Statement in while loop
+        int number = 1;
+        while (number < 10) {
+            if (number == 5) {
+                break;
+            }
+            System.out.println(number);
+            number++;
+        }
+        
+        System.out.println("*************************************************");
+        // Break Statement in do-while loop
+        int number2 = 1;
+        do {
+            if (number2 == 5) {
+                break;
+            }
+            System.out.println(number2);
+            number2++;
+        } while (number2 < 10); */
+        
+        
+        
+        // *********************************************************************
+        // *********************************************************************
+        // *********************************************************************
+        // JAVA CONTINUE
+        /* for (int i = 1; i < 10; i++) {
+            if (i == 5) {
+                continue;
+            }
+            System.out.println(i);
+        }
+        
+        // Continue Statement with Inner Loop
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    continue;
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        
+        System.out.println("*************************************************");
+        // Continue Statement with Labeled For Loop
+        aa:
+        for (int i = 1; i <= 3; i++) {
+            bb:
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    continue aa;
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        
+        System.out.println("*************************************************");
+        // Continue Statement in while loop
+        int number = 1;
+        while (number <= 10) {
+            if (number == 5) {
+                number++;
+                continue;
+            }
+            System.out.println(number);
+            number++;
+        }
+        
+        System.out.println("*************************************************");
+        // Continue Statement in do-while loop
+        int number2 = 1;
+        do {
+            if (number2 == 5) {
+                number2++;
+                continue;
+            }
+            System.out.println(number2);
+            number2++;
+        } while (number2 < 10); */
     }
 }
