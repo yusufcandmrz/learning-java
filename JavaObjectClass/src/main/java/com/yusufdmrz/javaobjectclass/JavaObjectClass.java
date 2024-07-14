@@ -4,12 +4,21 @@
 
 package com.yusufdmrz.javaobjectclass;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Yusuf
  */
 
-class Student {
+// Abstract class
+abstract class Demo {
+
+    // Abstract method
+    abstract void displayInformation();
+}
+
+class Student extends Demo{
 
     int id;
     String name;
@@ -21,6 +30,22 @@ class Student {
 
     void displayInformation() {
         System.out.println(id + " - " + name);
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
 
@@ -106,6 +131,27 @@ public class JavaObjectClass {
     
     int id;
     String name;
+    
+    // User defined method
+    public static void findEvenOdd(int num) {
+        if (num % 2 == 0) {
+            System.out.println(num + " is even");
+        } else {
+            System.out.println(num + " is odd");
+        }
+    }
+    
+    public static int add(int n1, int n2) {
+        return n1 + n2;
+    }
+    
+    static void show(){
+        System.out.println("It is an example of static method");
+    }
+    
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
 
     public static void main(String[] args) {
         // OBJECT AND CLASS
@@ -160,8 +206,34 @@ public class JavaObjectClass {
         
         
         
-        System.out.println("*************************************************");
-        System.out.println("*************************************************");
-        System.out.println("*************************************************");
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // METHOD
+        // Predefined method
+        /* System.out.println("The maximum number is " + Math.max(9, 7));
+        
+        // findEvenOdd
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Enter the number: ");
+        // int num = scanner.nextInt();
+        // findEvenOdd(num);
+        
+        // add
+        int a = 19, b = 5;
+        System.out.println("The sum of a and b is -> " + add(a, b));
+        
+        // show
+        show();
+        
+        // add
+        JavaObjectClass object = new JavaObjectClass();
+        System.out.println("The sum of a, b and c is -> " + object.add(12, 13, 14)); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
     }
 }
