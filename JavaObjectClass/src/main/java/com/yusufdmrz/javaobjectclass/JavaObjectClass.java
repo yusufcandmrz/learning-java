@@ -22,6 +22,40 @@ class Student extends Demo{
 
     int id;
     String name;
+    int age;
+    static String college = "ITS";
+    float fee;
+    
+    Student() {
+    }
+
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    
+    Student(int id, String name, float fee) {
+        this.id = id;
+        this.name = name;
+        this.fee = fee;
+    }
+    
+    Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+    
+    Student(int id, String name, int age, float fee){
+        this(id, name, age);
+        this.fee = fee;
+    }
+    
+    Student(Student student){
+        id = student.id;
+        name = student.name;
+        age = student.age;
+    }
 
     void insertRecord(int i, String n) {
         id = i;
@@ -29,7 +63,20 @@ class Student extends Demo{
     }
 
     void displayInformation() {
-        System.out.println(id + " - " + name);
+        System.out.println(id + " - " + name + " - " + age + " - " + college + " - " + fee);
+    }
+    
+    static void change() {
+        college = "BBDIT";
+    }
+    
+    void m() {
+        System.out.println("hello m");
+    }
+    
+    void n() {
+        System.out.println("hello n");
+        this.m();
     }
     
     public int getId() {
@@ -127,7 +174,91 @@ class Account {
     }
 }
 
+class Bike {
+
+    int id;
+    String name;
+    
+    Bike() {
+        System.out.println("Bike is created");
+    }
+    
+    void display(){
+        System.out.println(id + " " + name);
+    }
+}
+
+class Counter {
+    static int count = 0;
+    
+    Counter() {
+        count++;
+        System.out.println(count);
+    }
+}
+
+class Calculate{
+
+    static int cube(int x) {
+        return x * x * x;
+    }
+}
+
+class A {
+
+    A() {
+        System.out.println("hello a");
+    }
+
+    A(int x) {
+        this();
+        System.out.println(x);
+    }
+    
+    A getA() {
+        return this;
+    }
+}
+
+class S2 {
+
+    void m(S2 obj) {
+        System.out.println("method is invoked");
+    }
+
+    void p() {
+        m(this);
+    }
+}
+
+class B {
+
+    A4 obj;
+
+    B(A4 obj) {
+        this.obj = obj;
+    }
+
+    void display() {
+        System.out.println(obj.data);
+    }
+}
+
+class A4 {
+
+    int data = 10;
+
+    A4() {
+        B b = new B(this);
+        b.display();
+    }
+}
+
 public class JavaObjectClass {
+    
+    static {
+        System.out.println("static block is invoked");
+    }
     
     int id;
     String name;
@@ -235,5 +366,75 @@ public class JavaObjectClass {
         // ********************************************************************;
         // ********************************************************************;
         // ********************************************************************;
+        // CONSTRUCTOR
+        // Bike
+        /* Bike bike = new Bike();
+        bike.display();
+        
+        // Student
+        Student student = new Student(111, "Karan");
+        student.displayInformation();
+        
+        Student student2 = new Student(222, "Aryan", 25);
+        student2.displayInformation();
+        
+        Student student3 = new Student(student2);
+        student3.displayInformation();
+        
+        Student student4 = new Student();
+        student4.id = student3.id;
+        student4.name = student3.name;
+        student4.age = student3.age;
+        student4.displayInformation(); */
+        
+
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // STATIC KEYWORD
+        /* Student student = new Student();
+        student.displayInformation();
+        
+        // Counter
+        Counter counter = new Counter();
+        Counter counter2 = new Counter();
+        
+        // Student
+        Student.change();
+        Student student2 = new Student();
+        student.displayInformation();
+        
+        // Calculate
+        System.out.println("result -> " + Calculate.cube(5)); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // THIS KEYWORD
+        // Student
+        /* Student student = new Student(111, "ankit", 5000f);
+        student.displayInformation();
+        student.n();
+        
+        // A
+        A a = new A(5);
+        
+        // Student
+        Student student2 = new Student(111, "ankit", 25, 6000f);
+        student2.displayInformation();
+        
+        // S2
+        S2 s2 = new S2();
+        s2.p();
+        
+        // A4
+        A4 a4 = new A4();
+        
+        // A
+        A a2 = new A();
+        System.out.println(a2.getA()); */
     }
 }
