@@ -128,12 +128,12 @@ public class JavaInheritance {
         // ********************************************************************;
         // AGGREGATION
         // Circle
-        Circle circle = new Circle();
+        /* Circle circle = new Circle();
         System.out.println("circle area -> " + circle.area(5));
         
         // Emp
         Address address = new Address("gzb", "UP", "india");
         Emp emp = new Emp(111, "varun", address);
-        emp.display();
+        emp.display(); */
     }
 }
