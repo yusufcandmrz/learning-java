@@ -46,6 +46,18 @@ class Vehicle {
 }
 
 class Bike extends Vehicle {
+    
+    int speed;
+
+    Bike() {
+        System.out.println("constructor is invoked");
+        System.out.println("speed -> " + speed);
+    }
+    
+    {
+        System.out.println("instance initializer block invoked");
+        speed = 100;
+    }
 
     void run() {
         System.out.println("Bike is running safely");
@@ -81,6 +93,10 @@ class AXIS extends Bank {
 }
 
 class A {
+    
+    A() {
+        System.out.println("parent class costructor invoked");
+    }
 
     A get() {
         return this;
@@ -89,6 +105,14 @@ class A {
 
 class B extends A {
 
+    B() {
+        System.out.println("child class constructor invoked");
+    }
+    
+    {
+        System.out.println("instance initializer block is invoked");
+    }
+    
     B get() {
         return this;
     }
@@ -255,5 +279,17 @@ public class JavaPolymorphism {
         // Emp
         Emp emp = new Emp(1, "ankit", 45000f);
         emp.display(); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // INSTANCE INITIALIZER BLOCK
+        // Bike
+        /* Bike bike = new Bike();
+        
+        // B
+        B b = new B(); */
     }
 }
