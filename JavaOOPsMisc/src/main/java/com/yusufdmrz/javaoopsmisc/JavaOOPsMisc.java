@@ -29,6 +29,43 @@ class Student implements Cloneable {
 }
 
 public class JavaOOPsMisc {
+    
+    static public void p() {
+        System.out.println("Hello p");
+        p();
+    }
+    
+    public static int count = 0;
+    
+    public static void p2() {
+        count++;
+        if (count <= 5) {
+            System.out.println("Hello p2: " + count);
+            p2();
+        }
+    }
+    
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+    
+    static int n1 = 0;
+    static int n2 = 1;
+    static int n3;
+    
+    public static void fibonacci(int count) {
+        if (count > 0) {
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+            System.out.print(n3 + " ");
+            fibonacci(count - 1);
+        }
+    }
 
     public static void main(String[] args) {
         //OBJECT CLONING
@@ -132,5 +169,21 @@ public class JavaOOPsMisc {
         System.out.println("double value: " + doublevalue);
         System.out.println("char value: " + charvalue);
         System.out.println("boolean value: " + boolvalue); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA RECURSION
+        /* // p();
+        
+        p2();
+        
+        System.out.println(factorial(5));
+        
+        int count = 15;
+        System.out.print(n1 + " " + n2 + " ");
+        fibonacci(count - 2); */
     }
 }
