@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.yusufdmrz.javaoopsmisc","c":"M","l":"cube(int)"},{"p":"com.yusufdmrz.javaoopsmisc","c":"M","l":"M()","u":"%3Cinit%3E()"}];updateSearchResults();

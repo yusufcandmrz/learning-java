@@ -7,7 +7,7 @@ package com.yusufdmrz.javaoopsmisc;
 /**
  *
  * @author Yusuf
- */
+ */ 
 
 class Student implements Cloneable {
 
@@ -25,6 +25,21 @@ class Student implements Cloneable {
     
     public String toString() {
         return rollNo + " - " + name;
+    }
+}
+
+class Operation {
+
+    int data = 50;
+
+    void change(int data) {
+        data = data + 100;
+        System.out.println("local data value -> " + data);
+    }
+    
+    void change(Operation operation) {
+        operation.data = operation.data + 100;
+        System.out.println("local data value -> " + data);
     }
 }
 
@@ -185,5 +200,19 @@ public class JavaOOPsMisc {
         int count = 15;
         System.out.print(n1 + " " + n2 + " ");
         fibonacci(count - 2); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // CALL BY VALUE
+        /* Operation operation = new Operation();
+        operation.change(500);
+        System.out.println("data value -> " + operation.data);
+        
+        Operation operation2 = new Operation();
+        operation.change(operation);
+        System.out.println("data value -> " + operation.data); */
     }
 }
