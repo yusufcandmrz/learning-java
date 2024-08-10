@@ -14,6 +14,27 @@ import java.util.stream.Collectors;
  * @author Yusuf
  */
 public class JavaString {
+    
+    public static void concatWithString() {
+        String string = "Java";
+        for (int i = 0; i < 10000; i++) {
+            string = string + "Tpoint";
+        }
+    }
+
+    public static void concatWithStringBuffer() {
+        StringBuffer sb = new StringBuffer("Java");
+        for (int i = 0; i < 10000; i++) {
+            sb.append("Tpoint");
+        }
+    }
+    
+    public static void concatWithStringBuilder() {
+        StringBuilder sb = new StringBuilder("Java");
+        for (int i = 0; i < 10000; i++) {
+            sb.append("Tpoint");
+        }
+    }
 
     public static void main(String[] args) {
         // WHAT IS STRING
@@ -191,5 +212,72 @@ public class JavaString {
         String s5 = "Java is a programming language. Java is a platform. Java is an Island.";
         String replaceString = s5.replace("Java", "Kava");
         System.out.println(replaceString); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // STRINGBUFFER CLASS
+        /* StringBuffer sb = new StringBuffer("Hello");
+        // sb.append("Java");
+        // sb.insert(1, "Java");
+        // sb.replace(1, 3, "Java");
+        // sb.delete(1, 3);
+        sb.reverse();
+        System.out.println(sb);
+        
+        StringBuffer sb2 = new StringBuffer();
+        System.out.println(sb2.capacity());
+        sb2.append("Hello");
+        System.out.println(sb2.capacity());
+        sb2.append("java is my favourite language");
+        System.out.println(sb2.capacity());
+        
+        System.out.println("*************************************************");
+        
+        StringBuffer sb3 = new StringBuffer();
+        System.out.println(sb3.capacity());
+        sb3.append("Hello");
+        System.out.println(sb3.capacity());
+        sb3.append("java is my favourite language");
+        System.out.println(sb3.capacity());
+        sb3.ensureCapacity(10);
+        System.out.println(sb3.capacity());
+        sb3.ensureCapacity(50);
+        System.out.println(sb3.capacity()); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // STRING VS STRINGBUFFER VS STRINGBUILDER
+        /* // Performance Test of String, StringBuffer and StringBuilder
+        long startTime = System.currentTimeMillis();
+        concatWithString();
+        System.out.println("Time taken by Concating with String class: "
+                + (System.currentTimeMillis() - startTime) + "ms");
+        startTime = System.currentTimeMillis();
+        concatWithStringBuffer();
+        System.out.println("Time taken by Concating with StringBuffer class: "
+                + (System.currentTimeMillis() - startTime) + "ms");
+        startTime = System.currentTimeMillis();
+        concatWithStringBuilder();
+        System.out.println("Time taken by Concating with StringBuilder class: "
+                + (System.currentTimeMillis() - startTime) + "ms");
+        
+        System.out.println("*************************************************");
+
+        // String and StringBuffer HashCode Test
+        String str = "Java";
+        System.out.println(str.hashCode());
+        str = str + "tpoint";
+        System.out.println(str.hashCode());
+        System.out.println("*************************************************");
+        StringBuffer sb = new StringBuffer("Java");
+        System.out.println(sb.hashCode());
+        sb.append("tpoint");
+        System.out.println(sb.hashCode()); */
     }
 }
