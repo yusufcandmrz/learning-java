@@ -7,12 +7,44 @@ package com.yusufdmrz.javastring;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
+import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
 /**
  *
  * @author Yusuf
  */
+
+class Student {
+
+    int rollNo;
+    String name;
+    String city;
+
+    Student(int rollNo, String name, String city) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.city = city;
+    }
+    
+    public String toString() {
+        return this.rollNo + " " + this.name + " " + this.city;
+    }
+}
+
+final class Employee {
+
+    final String pancardNumber;
+
+    public Employee(String pancardNumber) {
+        this.pancardNumber = pancardNumber;
+    }
+
+    public String getPancardNumber() {
+        return this.pancardNumber;
+    }
+}
+
 public class JavaString {
     
     public static void concatWithString() {
@@ -279,5 +311,51 @@ public class JavaString {
         System.out.println(sb.hashCode());
         sb.append("tpoint");
         System.out.println(sb.hashCode()); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // CREATING IMMUTABLE CLASS
+        /* Employee employee = new Employee("ABC123");
+        System.out.println(employee.pancardNumber); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // TOSTRING METHOD
+        /* Student student1 = new Student(101, "Raj", "lucknow");
+        System.out.println(student1); */
+        
+        
+        
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // STRINGTOKENIZER CLASS
+        /* StringTokenizer st = new StringTokenizer("my name is khan");
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
+
+        System.out.println("*************************************************");
+
+        StringTokenizer st2 = new StringTokenizer("my,name,is,khan");
+        System.out.println(st2.nextToken(","));
+        
+        System.out.println("*************************************************");
+        
+        StringTokenizer st3 = new StringTokenizer("Hello everyone I am Java developer", " ");
+        while (st3.hasMoreElements()) {
+            System.out.println(st3.nextElement());
+        }
+        
+        System.out.println("*************************************************");
+        
+        StringTokenizer st4 = new StringTokenizer("Hello everyone, have a nice day", " ");
+        System.out.println(st4.countTokens()); */
     }
 }
