@@ -5,13 +5,49 @@
 package com.yusufdmrz.exceptionhandling;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
  *
  * @author Yusuf
  */
+
+class UserDefinedException extends  Exception {
+    public UserDefinedException(String str) {
+        super(str);
+    }
+}
 public class ExceptionHandling {
+
+    public static void validate(int age) {
+        if(age < 18){
+            throw new ArithmeticException("Person is not eligible to vote");
+        } else {
+            System.out.println("Person is eligible to vote");
+        }
+    }
+
+    public static void method() throws FileNotFoundException {
+        throw new FileNotFoundException();
+    }
+
+    void m() {
+        int data = 50 / 0;
+        // throw new IOException("device error");
+    }
+
+    void n() {
+        m();
+    }
+
+    void p() {
+        try {
+            n();
+        } catch (Exception e) {
+            System.out.println("exception handled");
+        }
+    }
 
     public static void main(String[] args) {
         // JAVA EXCEPTION
@@ -165,5 +201,133 @@ public class ExceptionHandling {
             System.out.println("Parent Exception occurs");
         }
         System.out.println("rest of the code"); */
+
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA NESTED TRY
+        /* try {
+            try {
+                int b = 39 / 0;
+            } catch (ArithmeticException e) {
+                System.out.println(e);
+            }
+            try {
+                int a[] = new int[5];
+                a[5] = 4;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println(e);
+            }
+            System.out.println("other statement");
+        } catch (Exception e) {
+            System.out.println("handled the exception (outer catch)");
+        }
+        System.out.println("normal flow..");
+
+        System.out.println("*************************************************");
+
+        try {
+            try {
+                try {
+                    int arr[] = { 1, 2, 3, 4 };
+                    System.out.println(arr[10]);
+                }
+                catch (ArithmeticException e) {
+                    System.out.println("Arithmetic exception");
+                    System.out.println(" inner try block 2");
+                }
+            }
+            catch (ArithmeticException e) {
+                System.out.println("Arithmetic exception");
+                System.out.println("inner try block 1");
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e);
+            System.out.println(" outer (main) try block");
+        }
+        catch (Exception e) {
+            System.out.println("Exception");
+            System.out.println(" handled in main try-block");
+        } */
+
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA FINALLY BLOCK
+        /* try {
+            int data = 25 / 5;
+        } catch (ArithmeticException e) {
+            System.out.println(e);
+        } finally {
+            System.out.println("finally block is always executed");
+        }
+        System.out.println("rest of the code");
+
+        System.out.println("*************************************************");
+
+        try {
+            // int data = 25 / 0;
+        } catch (NullPointerException e) {
+            System.out.println(e);
+        } finally {
+            System.out.println("finally block is always executed");
+        }
+        System.out.println("rest of the code");
+
+        System.out.println("*************************************************");
+
+        try {
+            System.out.println("Inside try block");
+            int data = 25 / 0;
+            System.out.println(data);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception handled");
+            System.out.println(e);
+        } finally {
+            System.out.println("finally block is always executed");
+        }
+        System.out.println("rest of the code..."); */
+
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA THROW KEYWORD
+        /* // validate(13);
+        System.out.println("rest of the code");
+
+        System.out.println("*************************************************");
+
+        try {
+            method();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("rest of the code...");
+
+        System.out.println("*************************************************");
+
+        try {
+            throw new UserDefinedException("This is user-defined exception");
+        } catch (UserDefinedException e) {
+            System.out.println("Caught the exception");
+            System.out.println(e.getMessage());
+        } */
+
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA EXCEPTION PROPAGATION
+        /* ExceptionHandling object = new ExceptionHandling();
+        object.p();
+        System.out.println("normal flow..."); */
     }
 }
