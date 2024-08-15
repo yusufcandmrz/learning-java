@@ -13,7 +13,26 @@ import java.io.PrintWriter;
  * @author Yusuf
  */
 
-class UserDefinedException extends  Exception {
+class Parent {
+    void msg() {
+        System.out.println("parent method");
+    }
+}
+
+class Child extends Parent {
+    void msg() throws /* IOException */ ArithmeticException {
+        System.out.println("child method");
+    }
+}
+
+class M {
+    void method() throws IOException {
+        throw new IOException("device error");
+        // System.out.println("device operation performed");
+    }
+}
+
+class UserDefinedException extends Exception {
     public UserDefinedException(String str) {
         super(str);
     }
@@ -28,16 +47,18 @@ public class ExceptionHandling {
         }
     }
 
-    public static void method() throws FileNotFoundException {
-        throw new FileNotFoundException();
-    }
-
-    void m() {
-        int data = 50 / 0;
+    public static void method() throws FileNotFoundException, IOException, ArithmeticException {
+        // throw new FileNotFoundException();
         // throw new IOException("device error");
+        throw new ArithmeticException("throwing ArithmeticException");
     }
 
-    void n() {
+    void m() throws  IOException{
+        // int data = 50 / 0;
+        throw new IOException("device error");
+    }
+
+    void n() throws IOException{
         m();
     }
 
@@ -49,7 +70,19 @@ public class ExceptionHandling {
         }
     }
 
-    public static void main(String[] args) {
+    public static void squareNumber(int number) throws ArithmeticException {
+        if (number < 1) {
+            throw new ArithmeticException("Number is negative, cannot calculate square");
+        } else {
+            System.out.println("Square of " + number + " is " + (number * number));
+        }
+    }
+
+    public static int divideNumber(int m, int n) throws ArithmeticException {
+        return m / n;
+    }
+
+    public static void main(String[] args) throws IOException{
         // JAVA EXCEPTION
         /* try {
             int data = 50 / 0;
@@ -329,5 +362,72 @@ public class ExceptionHandling {
         /* ExceptionHandling object = new ExceptionHandling();
         object.p();
         System.out.println("normal flow..."); */
+
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA THROWS KEYWORD
+        /* ExceptionHandling object = new ExceptionHandling();
+        object.p();
+        System.out.println("normal flow...");
+
+        System.out.println("*************************************************");
+
+        M m = new M();
+        try {
+            m.method();
+        } catch (Exception e) {
+            System.out.println("exception handled");
+        }
+        System.out.println("normal flow...");
+
+        System.out.println("*************************************************");
+
+        M m2 = new M();
+        m2.method();
+        System.out.println("normal flow"); */
+
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA THROW VS THROWS
+        /* // squareNumber(-3);
+        System.out.println("Rest of the code...");
+
+        System.out.println("*************************************************");
+
+        try {
+            divideNumber(50, 0);
+        } catch (ArithmeticException e) {
+            System.out.println("Number cannot to be divided by 0");
+        }
+        System.out.println("Rest of the code...");
+
+        System.out.println("*************************************************");
+
+        try {
+            method();
+        } catch (ArithmeticException e) {
+            System.out.println("caught in main() method");
+        } */
+
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // EXCEPTION HANDLING WITH METHOD OVERRIDING IN JAVA
+        Parent parent = new Child();
+        parent.msg();
+
+        try {
+            new M().method();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
