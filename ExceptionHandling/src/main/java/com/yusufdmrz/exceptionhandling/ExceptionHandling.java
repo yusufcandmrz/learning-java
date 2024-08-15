@@ -13,19 +13,32 @@ import java.io.PrintWriter;
  * @author Yusuf
  */
 
+class InvalidAgeException extends Exception {
+
+    public InvalidAgeException(String errorMessage) {
+        super(errorMessage);
+    }
+}
+
+class MyCustomException extends Exception {
+}
+
 class Parent {
-    void msg() {
+
+    void msg() throws Exception {
         System.out.println("parent method");
     }
 }
 
 class Child extends Parent {
-    void msg() throws /* IOException */ ArithmeticException {
+
+    void msg() /* throws IOException, Exception,  ArithmeticException */ {
         System.out.println("child method");
     }
 }
 
 class M {
+
     void method() throws IOException {
         throw new IOException("device error");
         // System.out.println("device operation performed");
@@ -33,6 +46,7 @@ class M {
 }
 
 class UserDefinedException extends Exception {
+
     public UserDefinedException(String str) {
         super(str);
     }
@@ -80,6 +94,14 @@ public class ExceptionHandling {
 
     public static int divideNumber(int m, int n) throws ArithmeticException {
         return m / n;
+    }
+    
+    public static void isValidate(int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("age is not valid to vote");
+        } else {
+            System.out.println("welcome to vote");
+        }
     }
 
     public static void main(String[] args) throws IOException{
@@ -421,13 +443,41 @@ public class ExceptionHandling {
         // ********************************************************************;
         // ********************************************************************;
         // EXCEPTION HANDLING WITH METHOD OVERRIDING IN JAVA
-        Parent parent = new Child();
-        parent.msg();
+        /* Parent parent = new Child();
+        try {
+            parent.msg();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        System.out.println("*************************************************");
 
         try {
             new M().method();
         } catch (Exception e) {
             System.out.println(e);
+        } */
+        
+
+
+        // ********************************************************************;
+        // ********************************************************************;
+        // ********************************************************************;
+        // JAVA CUSTOM EXCEPTION
+        /* try {
+            isValidate(13);
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
         }
+        System.out.println("rest of the code");
+        
+        System.out.println("*************************************************");
+        
+        try {
+            throw new MyCustomException();
+        } catch (MyCustomException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("rest of the code"); */
     }
 }
