@@ -15,6 +15,7 @@
     }
 } */
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
@@ -41,6 +42,24 @@ class Multi extends Thread {
 
     public Multi(String threadName) {
         super(threadName);
+    }
+}
+
+class ShutdownHook extends Thread {
+    public void run() {
+        System.out.println("shutdown hook task completed");
+    }
+}
+
+class FirstThread extends Thread {
+    public void run() {
+        System.out.println("first task");
+    }
+}
+
+class SecondThread extends Thread {
+    public void run() {
+        System.out.println("second task");
     }
 }
 
@@ -138,13 +157,52 @@ public class Main /* implements Runnable */ {
         System.out.println("state of thread2 when it has completed its execution - " + thread2.getState());
     } */
 
+    /* int contr = 1;
+    static int NUM;
+
+    public void displayOddNumber() {
+        synchronized (this) {
+            while (contr < NUM) {
+                while (contr % 2 == 0) {
+                    try {
+                        wait();
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                System.out.print(contr + " ");
+                contr += 1;
+                notify();
+            }
+        }
+    }
+
+    public void displayEvenNumber() {
+        synchronized (this) {
+            while (contr < NUM) {
+                while (contr % 2 == 1) {
+                    try {
+                        wait();
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                System.out.print(contr + " ");
+                contr += 1;
+                notify();
+            }
+        }
+    } */
+
     public static void main(String[] args) {
+
         // LIFE CYCLE OF A THREAD
         /* object = new Main();
         thread1 = new Thread(object);
         System.out.println("state of thread1 after spawning it - " + thread1.getState());
         thread1.start();
         System.out.println("state of thread1 after starting it - " + thread1.getState()); */
+
 
 
         // *******************************************
@@ -163,6 +221,7 @@ public class Main /* implements Runnable */ {
         Runnable runnable = new MyThread();
         Thread thread3 = new Thread(runnable, "thread3");
         System.out.println("thread3 name: " + thread3.getName()); */
+
 
 
         // *******************************************
@@ -184,6 +243,7 @@ public class Main /* implements Runnable */ {
         } */
 
 
+
         // *******************************************
         // *******************************************
         // *******************************************
@@ -191,6 +251,7 @@ public class Main /* implements Runnable */ {
         /* Multi thread1 = new Multi();
         thread1.start();
         thread1.start(); */
+
 
 
         // *******************************************
@@ -201,6 +262,7 @@ public class Main /* implements Runnable */ {
         Multi thread2 = new Multi();
         thread1.run();
         thread2.run(); */
+
 
 
         // *******************************************
@@ -249,6 +311,7 @@ public class Main /* implements Runnable */ {
         thread3.start(); */
 
 
+
         // *******************************************
         // *******************************************
         // *******************************************
@@ -283,7 +346,7 @@ public class Main /* implements Runnable */ {
         // *******************************************
         // *******************************************
         // *******************************************
-        //  DAEMON THREAD
+        // DAEMON THREAD
         /* Multi thread1 = new Multi("thread1");
         Multi thread2 = new Multi("thread2");
         thread1.setDaemon(true);
@@ -295,7 +358,7 @@ public class Main /* implements Runnable */ {
         // *******************************************
         // *******************************************
         // *******************************************
-        //  THREAD POOL
+        // THREAD POOL
         /* ExecutorService executor = Executors.newFixedThreadPool(5);
         for (int i = 0; i < 10; i++) {
             Runnable runnable = new MyThread(" " + i);
@@ -326,7 +389,7 @@ public class Main /* implements Runnable */ {
         // *******************************************
         // *******************************************
         // *******************************************
-        //  THREAD GROUP
+        // THREAD GROUP
         /* MyThreadGroup myThreadGroup = new MyThreadGroup();
         ThreadGroup threadGroup = new ThreadGroup("ThreadGroupName");
         ThreadGroup threadGroup2 = new ThreadGroup(threadGroup,"ThreadGroupName2");
@@ -357,5 +420,119 @@ public class Main /* implements Runnable */ {
         System.out.println("ThreadGroup2 Parent Name: " + threadGroup2.getParent().getName()); */
 
         // threadGroup.interrupt();
+
+
+
+        // *******************************************
+        // *******************************************
+        // *******************************************
+        // SHUTDOWN HOOK
+        /* Runtime runtime = Runtime.getRuntime();
+
+        ShutdownHook shutdownHook = new ShutdownHook();
+
+        // runtime.addShutdownHook(shutdownHook);
+
+        runtime.addShutdownHook(new Thread() {
+            public void run() {
+                System.out.println("shutdown hook task completed");
+            }
+        });
+
+        System.out.println("main thread sleeping...");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // runtime.removeShutdownHook(shutdownHook); */
+
+
+
+        // *******************************************
+        // *******************************************
+        // *******************************************
+        // PERFORMING MULTIPLE TASK
+        /* FirstThread ft = new FirstThread();
+        FirstThread ft2 = new FirstThread();
+        ft.start();
+        ft2.start(); */
+
+        /* Thread thread = new Thread() {
+            public void run() {
+                System.out.println("thread task");
+            }
+        };
+        Thread thread2 = new Thread() {
+            public void run() {
+                System.out.println("thread2 task");
+            }
+        };
+        thread.start();
+        thread2.start(); */
+
+        /* FirstThread ft = new FirstThread();
+        SecondThread st = new SecondThread();
+        ft.start();
+        st.start(); */
+
+        /* Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("runnable task");
+            }
+        };
+        Runnable runnable2 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("runnable2 task");
+            }
+        };
+        Thread thread = new Thread(runnable);
+        Thread thread2 = new Thread(runnable2);
+        thread.start();
+        thread2.start(); */
+
+        /* NUM = 20;
+        Main main = new Main();
+        Thread th1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                main.displayEvenNumber();
+            }
+        });
+        Thread th2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                main.displayOddNumber();
+            }
+        });
+        th1.start();
+        th2.start(); */
+
+
+
+        // *******************************************
+        // *******************************************
+        // *******************************************
+        // RUNTIME CLASS
+        // Runtime runtime = Runtime.getRuntime();
+
+        /* try {
+            runtime.exec("notepad");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } */
+
+        /* try {
+            runtime.exec("C:\\Windows\\System32\\shutdown -s -t 0");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } */
+
+        /* System.out.println("runtime available processors: " + runtime.availableProcessors());
+        System.out.println("runtime free memory: " + runtime.freeMemory());
+        System.out.println("runtime total memory: " + runtime.totalMemory()); */
     }
 }
