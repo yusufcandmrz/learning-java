@@ -68,6 +68,30 @@ class SenderThread extends Thread {
     }
 }
 
+class Customer {
+    int amount = 10000;
+
+    synchronized void withdraw(int amount) {
+        System.out.println("going to withdraw");
+        if (this.amount < amount) {
+            System.out.println("less balance; waiting for deposit");
+            try {
+                wait();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+        this.amount -= amount;
+        System.out.println("withdraw completed");
+    }
+
+    synchronized void deposit(int mount) {
+        System.out.println("going to deposit");
+        this.amount += amount;
+        System.out.println("deposit completed");
+        notify();
+    }
+}
 
 public class Main {
 
@@ -227,5 +251,26 @@ public class Main {
         };
         new Thread(r1).start();
         new Thread(r2).start(); */
+
+
+        // ************************************************************
+        // ************************************************************
+        // ************************************************************
+        // INTER-THREAD COMMUNICATION IN JAVA
+
+        /* Customer customer = new Customer();
+        Thread t1 = new Thread() {
+            @Override
+            public void run() {
+                customer.withdraw(15000);
+            }
+        };
+        Thread t2 = new Thread() {
+            public void run() {
+                customer.deposit(10000);
+            }
+        };
+        t1.start();
+        t2.start(); */
     }
 }
