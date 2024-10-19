@@ -93,6 +93,43 @@ class Customer {
     }
 }
 
+class InterruptingThread extends Thread {
+    public void run() {
+        /* try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // throw new RuntimeException("Thread interrupted..." + e);
+            System.out.println("Exception handled " + e);
+        }
+        System.out.println("Thread running..."); */
+
+        /* for(int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        } */
+
+        for (int i = 0; i < 2; i++) {
+            if (Thread.interrupted()) {
+                System.out.println("thread interrupted");
+            } else {
+                System.out.println("thread not interrupted");
+            }
+        }
+    }
+}
+
+class Reentrant {
+    public synchronized void m() {
+        System.out.println("started m method");
+        n();
+        System.out.println("ended m method");
+    }
+
+    public synchronized void n() {
+        System.out.println("started n method");
+        System.out.println("ended n method");
+    }
+}
+
 public class Main {
 
     private class FirstResource {
@@ -272,5 +309,29 @@ public class Main {
         };
         t1.start();
         t2.start(); */
+
+
+        // ************************************************************
+        // ************************************************************
+        // ************************************************************
+        // INTERRUPTING THREAD
+        /* InterruptingThread it1 = new InterruptingThread();
+        InterruptingThread it2 = new InterruptingThread();
+        it1.start();
+        it1.interrupt();
+        it2.start(); */
+
+
+        // ************************************************************
+        // ************************************************************
+        // ************************************************************
+        // REENTRANT MONITOR
+        /* Reentrant reentrant = new Reentrant();
+        Thread thread = new Thread() {
+            public void run() {
+                reentrant.m();
+            }
+        };
+        thread.start(); */
     }
 }
