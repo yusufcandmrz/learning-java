@@ -134,5 +134,63 @@ public class Main {
         } */
 
 
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // ByteArrayInputStream
+        /* byte[] bytes = {34, 35, 36};
+        ByteArrayInputStream bin = new ByteArrayInputStream(bytes);
+        int result;
+        while((result = bin.read()) != -1){
+            System.out.print(result + " ");
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // DataOutputStream
+        /* try (FileOutputStream fout = new FileOutputStream(testFileAddress);
+             DataOutputStream dout = new DataOutputStream(fout);
+        ) {
+            dout.writeInt(65);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // DataInputStream
+        /* try (
+                FileInputStream fin = new FileInputStream(testFileAddress);
+                DataInputStream din = new DataInputStream(fin);
+        ) {
+            int size = din.available();
+            byte[] bytes = new byte[size];
+            din.read(bytes);
+            for (byte b : bytes) {
+                System.out.println((char) b);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // FilterOutputStream
+        /* try (
+                FileOutputStream fout = new FileOutputStream(testFileAddress);
+                FilterOutputStream filterOut = new FilterOutputStream(fout);
+        ) {
+            String string = "hello java";
+            byte[] bytes = string.getBytes();
+            filterOut.write(bytes);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
     }
 }
