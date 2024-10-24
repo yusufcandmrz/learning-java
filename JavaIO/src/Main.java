@@ -1,5 +1,7 @@
 import java.io.*;
+import java.security.PermissionCollection;
 import java.sql.SQLData;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Vector;
 import java.util.List;
@@ -7,6 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // JAVA INPUT/OUTPUT
+        String fileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO";
         String testFileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFile.txt";
         String testFileTwoAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileTwo.txt";
         String testFileThreeAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileThree.txt";
@@ -189,6 +192,130 @@ public class Main {
             String string = "hello java";
             byte[] bytes = string.getBytes();
             filterOut.write(bytes);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // FilterInputStream
+        /* try (
+                FileInputStream fin = new FileInputStream(testFileAddress);
+                FilterInputStream filterIn = new BufferedInputStream(fin);
+        ) {
+            int result;
+            while((result = filterIn.read()) != -1) {
+                System.out.print((char) result);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // ObjectStreamClass
+        /* ObjectStreamClass osc = ObjectStreamClass.lookup(String.class);
+        System.out.println(osc.getField("hash"));
+        System.out.println(osc.getSerialVersionUID());
+        System.out.println(osc.getName());
+        System.out.println(Arrays.toString(osc.getFields())); */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // ObjectStreamField
+        /* ObjectStreamClass osc = ObjectStreamClass.lookup(String.class);
+        ObjectStreamField osf = osc.getField("value");
+        try {
+            System.out.println(osf.getName());
+            System.out.println(osf.getType());
+            System.out.println(osf.isPrimitive());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // Console
+        /* Console console = System.console();
+        System.out.println("Enter your name");
+        String input = console.readLine();
+        System.out.println("Enter password");
+        char[] input2 = console.readPassword();
+        System.out.println("Welcome " + input + ", your password is: " + String.valueOf(input2)); */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // FilePermission
+        /* FilePermission fp = new FilePermission(fileAddress, "read");
+        PermissionCollection pc = fp.newPermissionCollection();
+        pc.add(fp);
+        FilePermission fp2 = new FilePermission(fileAddress, "write");
+        pc.add(fp2);
+        if (pc.implies(new FilePermission(fileAddress, "read, write"))) {
+            System.out.println("read and write permissions is granted");
+        } else {
+            System.out.println("read and write permissions is not granted");
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // Writer
+        /* try (Writer writer = new FileWriter(testFileAddress)) {
+            String content = "hello world";
+            writer.write(content);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // Reader
+        /* try (
+                Reader reader = new FileReader(testFileAddress);
+        ) {
+            int result;
+            while ((result = reader.read()) != -1) {
+                System.out.print((char) result);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // FileWriter
+        /* try (FileWriter fw = new FileWriter(testFileAddress)) {
+            String content = "hello javaTpoint";
+            fw.write(content);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // BufferedWriter
+        /* try (FileWriter fw = new FileWriter(testFileAddress);
+             BufferedWriter bw = new BufferedWriter(fw);
+        ) {
+            bw.write("Welcome to javaTpoint");
         } catch (Exception e) {
             throw new RuntimeException(e);
         } */
