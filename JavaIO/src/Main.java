@@ -9,10 +9,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // JAVA INPUT/OUTPUT
-        String fileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO";
-        String testFileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFile.txt";
-        String testFileTwoAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileTwo.txt";
-        String testFileThreeAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileThree.txt";
+        String fileAddress = "C:\\\\java\\\\learning-java\\\\JavaIO";
+        String testFileAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFile.txt";
+        String testFileTwoAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileTwo.txt";
+        String testFileThreeAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileThree.txt";
         /* System.out.println("simple message");
         System.err.println("error message");
 
@@ -316,6 +316,67 @@ public class Main {
              BufferedWriter bw = new BufferedWriter(fw);
         ) {
             bw.write("Welcome to javaTpoint");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // BufferedReader
+        /* try (FileReader fr = new FileReader(testFileAddress);
+             BufferedReader br = new BufferedReader(fr);
+        ) {
+            int content;
+            while ((content = br.read()) != -1) {
+                System.out.print((char) content);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+        /* try (
+                InputStreamReader isr = new InputStreamReader(System.in);
+                BufferedReader br = new BufferedReader(isr);
+        ) {
+            String name = "";
+            while (!name.equals("stop")) {
+                System.out.println("Enter your name");
+                name = br.readLine();
+                System.out.println("name: " + name);
+            }
+            // System.out.println("Welcome " + name);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // CharArrayReader
+        /* char[] charArray = {'j', 'a', 'v', 'a', 't', 'p', 'o', 'i', 'n', 't'};
+        CharArrayReader car = new CharArrayReader(charArray);
+        try {
+            int result;
+            while ((result = car.read()) != -1) {
+                System.out.println("result: " + (char) result);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // CharArrayWriter
+        /* try (CharArrayWriter caw = new CharArrayWriter();
+             FileWriter fw = new FileWriter(testFileAddress);
+        ) {
+            caw.write("Hello javaTpoint");
+            caw.writeTo(fw);
         } catch (Exception e) {
             throw new RuntimeException(e);
         } */
