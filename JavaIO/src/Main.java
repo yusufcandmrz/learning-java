@@ -9,10 +9,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // JAVA INPUT/OUTPUT
-        String fileAddress = "C:\\\\java\\\\learning-java\\\\JavaIO";
-        String testFileAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFile.txt";
-        String testFileTwoAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileTwo.txt";
-        String testFileThreeAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileThree.txt";
+        String fileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO";
+        String testFileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFile.txt";
+        String testFileTwoAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileTwo.txt";
+        String testFileThreeAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileThree.txt";
         /* System.out.println("simple message");
         System.err.println("error message");
 
@@ -377,6 +377,128 @@ public class Main {
         ) {
             caw.write("Hello javaTpoint");
             caw.writeTo(fw);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // PrintStream
+        /* try (
+        FileOutputStream fout = new FileOutputStream(testFileAddress);
+        PrintStream ps = new PrintStream(fout);
+        ) {
+            ps.println(1999);
+            ps.println("Hello Java");
+            ps.println("Welcome to Java");
+        } catch (Exception e) {
+            throw new RuntimeException();
+        } */
+
+        /* int number = 25;
+        System.out.printf("%d", number); */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // PrintWriter
+        /* PrintWriter pw = new PrintWriter(System.out);
+        String content = "javaTpoint provides tutorials of all technology";
+        pw.write(content);
+        pw.flush();
+        pw.close();
+        try {
+            pw = new PrintWriter(testFileAddress);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        pw.write(content);
+        pw.flush();
+        pw.close(); */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // OutputStreamWriter
+        /* try(OutputStream os = new FileOutputStream(testFileAddress);
+            Writer writer = new OutputStreamWriter(os);
+        ) {
+            writer.write("hello javaTpoint");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // InputStreamReader
+        /* try (InputStream is = new FileInputStream(testFileAddress);
+             Reader reader = new InputStreamReader(is);
+        ) {
+            int result;
+            while((result = reader.read()) != -1) {
+                System.out.print((char) result);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // PushbackInputStream
+        /* String content = "1##2#34###12";
+        byte[] bytes = content.getBytes();
+        try (ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+             PushbackInputStream pis = new PushbackInputStream(bais);
+        ) {
+            int firstResult;
+            while ((firstResult = pis.read()) != -1) {
+                if (firstResult == '#') {
+                    int secondResult;
+                    if ((secondResult = pis.read()) == '#') {
+                        System.out.print("**");
+                    } else {
+                        pis.unread(secondResult);
+                        System.out.print((char) firstResult);
+                    }
+                } else {
+                    System.out.print((char) firstResult);
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // PushbackReader
+        /* char[] array = {'1', '-', '-', '2', '-', '3', '4', '-', '-', '-', '5', '6'};
+        CharArrayReader reader = new CharArrayReader(array);
+        PushbackReader pr = new PushbackReader(reader);
+        int currentResult;
+        try {
+            while ((currentResult = pr.read()) != -1) {
+                int nextResult;
+                if (currentResult == '-') {
+                    if ((nextResult = pr.read()) == '-') {
+                        System.out.print("#");
+                    } else {
+                        pr.unread(nextResult);
+                        System.out.print((char) currentResult);
+                    }
+                } else {
+                    System.out.print((char) currentResult);
+                }
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         } */
