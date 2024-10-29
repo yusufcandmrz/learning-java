@@ -1,12 +1,4 @@
-import javax.management.RuntimeErrorException;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.security.PermissionCollection;
-import java.sql.SQLData;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.Vector;
-import java.util.List;
 
 class CustomFilterWriter extends FilterWriter {
 
@@ -779,5 +771,33 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // Scanner
+        /* Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Your name is " + name);
+        scanner.close(); */
+
+        /* String string = "hello java";
+        Scanner scanner = new Scanner(string);
+        System.out.println("Scanner has next: " + scanner.hasNext());
+        System.out.println("Scanner string: " + scanner.nextLine());
+        System.out.println("Scanner has next: " + scanner.hasNext());
+        scanner.close(); */
+
+        /* String string = "Hello/This is JavaTpoint/My name is Yusuf";
+        Scanner scanner = new Scanner(string);
+        System.out.println("Scanner has next boolean: " + scanner.hasNextBoolean());
+        scanner.useDelimiter("/");
+        while (scanner.hasNext()) {
+            System.out.println(scanner.next());
+        }
+        System.out.println("Delimited used: " + scanner.delimiter());
+        scanner.close(); */
     }
 }
