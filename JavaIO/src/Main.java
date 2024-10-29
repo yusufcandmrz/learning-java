@@ -1,4 +1,6 @@
+import javax.management.RuntimeErrorException;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.security.PermissionCollection;
 import java.sql.SQLData;
 import java.util.Arrays;
@@ -6,13 +8,73 @@ import java.util.Enumeration;
 import java.util.Vector;
 import java.util.List;
 
+class CustomFilterWriter extends FilterWriter {
+
+    /**
+     * Create a new filtered writer.
+     *
+     * @param out a Writer object to provide the underlying stream.
+     * @throws NullPointerException if {@code out} is {@code null}
+     */
+    protected CustomFilterWriter(Writer out) {
+        super(out);
+    }
+
+    @Override
+    public void write(String str) throws IOException {
+        super.write(str);
+    }
+}
+
+class CustomFilterReader extends FilterReader {
+
+    /**
+     * Creates a new filtered reader.
+     *
+     * @param in a Reader object providing the underlying stream.
+     * @throws NullPointerException if {@code in} is {@code null}
+     */
+    protected CustomFilterReader(Reader in) {
+        super(in);
+    }
+
+    @Override
+    public int read() throws IOException {
+        return super.read();
+    }
+}
+
 public class Main {
+
+    static byte[] readFromFile(String filePath, int position, int size) {
+        try (
+                RandomAccessFile file = new RandomAccessFile(filePath, "r")
+        ) {
+            file.seek(position);
+            byte[] bytes = new byte[size];
+            file.read(bytes);
+            return bytes;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    static void writeToFile(String filePath, String data, int position) {
+        try (RandomAccessFile file = new RandomAccessFile(filePath, "rw");) {
+            file.seek(position);
+            file.write(data.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         // JAVA INPUT/OUTPUT
-        String fileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO";
-        String testFileAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFile.txt";
-        String testFileTwoAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileTwo.txt";
-        String testFileThreeAddress = "D:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileThree.txt";
+        String fileAddress = "C:\\\\java\\\\learning-java\\\\JavaIO";
+        String testFileAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFile.txt";
+        String testFileTwoAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileTwo.txt";
+        String testFileThreeAddress = "C:\\\\java\\\\learning-java\\\\JavaIO\\\\testFileThree.txt";
         /* System.out.println("simple message");
         System.err.println("error message");
 
@@ -501,6 +563,221 @@ public class Main {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // StringWriter
+        /* char[] charArray = new char[512];
+        StringWriter writer = new StringWriter();
+        try (FileInputStream input = new FileInputStream(testFileAddress);
+             BufferedReader buffer = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
+        ) {
+            int x;
+            while((x = buffer.read(charArray)) != -1) {
+                writer.write(charArray, 0, x);
+            }
+            System.out.println(writer.toString());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // StringReader
+        /* String content = "Hello javaTpoint";
+        StringReader reader = new StringReader(content);
+        int result;
+        try {
+            while ((result = reader.read()) != -1) {
+                System.out.print((char) result);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // PipedWriter
+        /* try (PipedReader reader = new PipedReader();
+             PipedWriter writer = new PipedWriter(reader)) {
+            Thread readerThread = new Thread(() -> {
+                try {
+                    int data;
+                    while ((data = reader.read()) != -1) {
+                        System.out.print((char) data);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            Thread writerThread = new Thread(() -> {
+                try {
+                    writer.write("I love java");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            readerThread.start();
+            writerThread.start();
+            readerThread.join();
+            writerThread.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // PipedReader
+        /* try {
+            PipedReader reader = new PipedReader();
+            PipedWriter writer = new PipedWriter(reader);
+            Thread threadReader = new Thread(() -> {
+                try {
+                    int content;
+                    while ((content = reader.read()) != -1) {
+                        System.out.print((char) content);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            Thread threadWriter = new Thread(() -> {
+                try {
+                    String content = "Hello java, this is javaTpoint";
+                    writer.write(content);
+                    writer.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        writer.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            threadReader.start();
+            threadWriter.start();
+            threadReader.join();
+            threadWriter.join();
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // FilterWriter
+        /* try (
+                FileWriter fw = new FileWriter(testFileAddress);
+                CustomFilterWriter writer = new CustomFilterWriter(fw);
+                FileReader fr = new FileReader(testFileAddress);
+        ) {
+            writer.write("Hello Java");
+            writer.flush();
+            int result;
+            while ((result = fr.read()) != -1) {
+                System.out.print((char) result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // FilterReader
+        /* try (
+                FileReader fr = new FileReader(testFileAddress);
+                CustomFilterReader reader = new CustomFilterReader(fr);
+        ) {
+            int result;
+            while ((result = reader.read()) != -1) {
+                System.out.print((char) result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // File
+        /* File file = new File("testFileFour.txt");
+        try {
+            if (file.createNewFile()) {
+                System.out.println(file.getName() + " file created");
+            } else {
+                System.out.println(file.getName() + " file not created");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+        /* try {
+            File file = new File("testFileFive.txt");
+            file.createNewFile();
+            File canonicalFile = file.getCanonicalFile();
+            String absolutePath = String.valueOf(canonicalFile.getAbsoluteFile());
+            if (canonicalFile.exists()) {
+                System.out.println("file exists: " + absolutePath);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+        /* File srcFile = new File("C:\\java\\learning-java\\JavaIO");
+        File[] files = srcFile.listFiles();
+        for (File file : files) {
+            System.out.println("name: " + file.getName());
+            System.out.println("is hidden: " + file.isHidden());
+            System.out.println("lenght: " + file.length());
+            System.out.println("*******************************");
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // FileDescriptor
+        /* byte[] bytes = {48, 49, 50, 51, 52};
+        try (
+                FileOutputStream fos = new FileOutputStream(testFileAddress);
+                FileInputStream fis = new FileInputStream(testFileAddress);
+        ) {
+            fos.write(bytes);
+            fos.flush();
+            int value;
+            while ((value = fis.read()) != -1) {
+                System.out.print((char) value);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+
+        // ****************************************************
+        // ****************************************************
+        // ****************************************************
+        // RandomAccessFile
+        /* try {
+            System.out.println(new String(readFromFile(testFileAddress, 0, 18)));
+            writeToFile(testFileAddress, "I love java", 20);
+        } catch (Exception e) {
+            e.printStackTrace();
         } */
     }
 }
