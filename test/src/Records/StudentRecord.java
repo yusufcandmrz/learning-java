@@ -1,4 +1,4 @@
-package Record;
+package Records;
 
 public record StudentRecord(String name, int age) {
 

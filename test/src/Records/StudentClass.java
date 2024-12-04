@@ -1,4 +1,4 @@
-package Record;
+package Records;
 
 import java.util.Objects;
 
