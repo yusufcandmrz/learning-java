@@ -6,6 +6,13 @@ enum Days {
 
 public class Main {
     public static void main(String[] args) {
+
+        /*
+
+        java 12'de tanitildi. java 14'de tamamlandi
+
+         */
+
         String day = SwitchExpression.Days.FRIDAY.toString();
         int dayNumber = switch (day) {
             case "SUNDAY" -> 7;
