@@ -1,4 +1,4 @@
-package Records;
+package com.yusufcandmrz.records;
 
 import java.util.Objects;
 

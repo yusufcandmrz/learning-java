@@ -1,8 +1,7 @@
-package VirtualThread;
+package com.yusufcandmrz.virtualthreads;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class Main {
 

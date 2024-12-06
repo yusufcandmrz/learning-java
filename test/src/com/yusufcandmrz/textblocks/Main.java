@@ -1,4 +1,4 @@
-package TextBlocks;
+package com.yusufcandmrz.textblocks;
 
 public class Main {
     public static void main(String[] args) {

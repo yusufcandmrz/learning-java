@@ -1,4 +1,4 @@
-package SwitchExpression;
+package com.yusufcandmrz.switchexpressions;
 
 enum Days {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
@@ -15,14 +15,9 @@ public class Main {
 - bu statements uzerinden switch expression haline getir
 - yield nedir? yield'i nasil kullanabiliriz?
 
-*local type type inference //java10
-- "var" anahtar kelimesi ile nasil degisken tanimlanabilir?
-- ne gibi durumlarda kullanilabilir? //degisken initialize edilmelidir.
 
-*pattern matching
-- instanceof kontrolunden bahset. onceki versiyonu ile farkini goster. //jdk 14'de tanitildi. jdk16'da tamamlandi
-- switch expression ile kullanimindan bahset. onceki versiyonu ile farkini goster. //jdk 17
-- records?
+
+
 
 *sealed classes // java 15'de tanitildi. java17'de tamamlandi
 - alt siniflar sealed, non-sealed veya final olmali
@@ -60,7 +55,7 @@ jdk22
 
          */
 
-        String day = SwitchExpression.Days.FRIDAY.toString();
+        String day = com.yusufcandmrz.switchexpressions.Days.FRIDAY.toString();
         int dayNumber = switch (day) {
             case "SUNDAY" -> 7;
             case "MONDAY" -> 1;

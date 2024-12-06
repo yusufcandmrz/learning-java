@@ -1,4 +1,4 @@
-package Records;
+package com.yusufcandmrz.records;
 
 public class Main {
     public static void main(String[] args) {

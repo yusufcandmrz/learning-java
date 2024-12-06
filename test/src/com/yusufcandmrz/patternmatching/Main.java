@@ -1,6 +1,9 @@
-package PatternMathcing;
+package com.yusufcandmrz.patternmatching;
 
 public class Main {
+
+    // instanceof kontrolunden bahset. onceki versiyonu ile farkini goster. //jdk 14'de tanitildi. jdk 16'da tamamlandi
+    // switch expression ile kullanimindan bahset. onceki versiyonu ile farkini goster. //jdk 17
 
     public static <T> void printString(T variable) {
         /* if (variable instanceof String) {
