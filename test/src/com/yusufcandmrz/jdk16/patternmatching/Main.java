@@ -1,6 +1,10 @@
-package com.yusufcandmrz.patternmatching;
+package com.yusufcandmrz.jdk16.patternmatching;
 
 public class Main {
+
+    // For instanceof (JDK 16)
+    // For switch (JDK 21)
+    // For records (JDK 21)
 
     // instanceof kontrolunden bahset. onceki versiyonu ile farkini goster. //jdk 14'de tanitildi. jdk 16'da tamamlandi
     // switch expression ile kullanimindan bahset. onceki versiyonu ile farkini goster. //jdk 17

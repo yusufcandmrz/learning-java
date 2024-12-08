@@ -1,10 +1,12 @@
-package com.yusufcandmrz.records;
+package com.yusufcandmrz.jdk16.records;
 
 public class Main {
+
+    // Immutable data holders with Auto-generated equals, hashCode and toString
+
     public static void main(String[] args) {
 
         /*
-
         java 14'de tanitildi. java 16'da tamamlandi
         immutable class nedir?
         immutable class neden kullanilir?
@@ -14,7 +16,6 @@ public class Main {
         record class nasil kullanilir?
         record ile record kullanilmayan class arasindaki fark nedir?
         record class icerisinde neler yapabiliriz?
-
         */
 
         StudentClass studentClass = new StudentClass("firstStudent", 20);

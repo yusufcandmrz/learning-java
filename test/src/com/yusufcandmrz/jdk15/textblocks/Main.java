@@ -1,7 +1,11 @@
-package com.yusufcandmrz.textblocks;
+package com.yusufcandmrz.jdk15.textblocks;
 
 public class Main {
+
+    // Multiline Strings
+
     public static void main(String[] args) {
+
         /*
         - java 15'de gelen text blocks özelliği, çok satırlı String kullanımını
         kolaylaştıran bir özelliktir.

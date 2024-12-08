@@ -1,10 +1,13 @@
-package com.yusufcandmrz.switchexpressions;
+package com.yusufcandmrz.jdk14.switchexpressions;
 
 enum Days {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
 }
 
 public class Main {
+
+    // Makes switch usable
+
     public static void main(String[] args) {
 
         /*
@@ -55,7 +58,7 @@ jdk22
 
          */
 
-        String day = com.yusufcandmrz.switchexpressions.Days.FRIDAY.toString();
+        String day = Days.FRIDAY.toString();
         int dayNumber = switch (day) {
             case "SUNDAY" -> 7;
             case "MONDAY" -> 1;

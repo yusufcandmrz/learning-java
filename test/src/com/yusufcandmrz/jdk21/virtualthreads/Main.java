@@ -1,9 +1,11 @@
-package com.yusufcandmrz.virtualthreads;
+package com.yusufcandmrz.jdk21.virtualthreads;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main {
+
+    // Executors.newVirtualThreadPerTaskExecutor()
 
     public static void simulateNetworkRequest(int requestId) throws InterruptedException {
         System.out.println("Request " + requestId + " started.");

@@ -1,4 +1,4 @@
-package com.yusufcandmrz.records;
+package com.yusufcandmrz.jdk16.records;
 
 public record StudentRecord(String name, int age) {
 

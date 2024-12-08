@@ -1,13 +1,13 @@
-package com.yusufcandmrz.localvariabletypeinference;
+package com.yusufcandmrz.jdk10.localvariabletypeinference;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
 
-    public static void main(String[] args) {
+    // The "var" reserved type name
 
-        // java 10 ve sonrasi icin kullanilabilir
+    public static void main(String[] args) {
 
         // "var" anahtar kelimesi ile kullanilir
 
