@@ -14,6 +14,21 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+        /*
+        virtual threads java 19 - 22
+        -- virtual thread kullanacagimiz zaman, sayi belirtmemize gerek yok. arka planda jvm bunu yonetiyor. calisacak olan virtual threads gonderilen gorev sayisina, guncel olarak aktif olan gorevlere ve kac tanesinin bekliyor olmasina bagli olarak degiskenlik gostermektedir.
+        -- virtual threads, platform thread ustunde caliyor. jvm virtual threads kullanabilmek icin platform threads kullanmaktadir. tabii her bir virtual thread icin platform thread olusturmamaktadir. Kucuk sayida platform threads tekrar kullanarak virtual threads calistirabilmektedir.
+        -- platform threads isletim sistemindeki threads ile eslesmektedir. her bir platform thread icin isletim sistemindeki bir thread ayarlanmaktadir
+        -- bir virtual thread beklemeye alindiginda parked durumuna geciyor. parked oldugunda ise virtual thread'in bagli oldugu platform thread'i baska isleri yapabilmesi icin serbest birakiyor.
+        -- bir virtual thread calismadiginda heap memory'de yer alir. buna 'stack chunk object' denir.
+
+        - thread'ler artik platform thread olarak isimlendirilmektedir
+        - platform threads isletim sistemi tarafindan yonetilipm dogrudan sistemdeki is parcaciklariyla eslesir. virtual threads ise jvm tarafindan yonetilip kucuk sayidaki platform threads ile calistirilabilir.
+        - platform threads context-switching ve kaynak yonetimi isletim sistemi tarafindan yapilir. \
+        */
+
+
         /* Thread virtualThread = Thread.ofVirtual().start(() -> {
             System.out.println("This is running on a virtual thread");
         });

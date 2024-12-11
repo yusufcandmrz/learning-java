@@ -7,6 +7,28 @@ public class Main {
     public static void main(String[] args) {
 
         /*
+        String json = "{\n" +
+              "  \"name\": \"Alice\",\n" +
+              "  \"age\": 30,\n" +
+              "  \"city\": \"Wonderland\"\n" +
+              "}";
+        */
+
+        /*
+        String json = """
+        {
+        "name": "Alice",
+        "age": 30,
+        "city": "Wonderland"
+        }
+        """;
+        */
+
+        // *******************************************************
+        // *******************************************************
+        // *******************************************************
+
+        /*
         - java 15'de gelen text blocks özelliği, çok satırlı String kullanımını
         kolaylaştıran bir özelliktir.
         - java 13'de tanıtıldı. java 13 ve java 14'de kullanabilmek için "preview

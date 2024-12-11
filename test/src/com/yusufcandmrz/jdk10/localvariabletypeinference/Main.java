@@ -1,28 +1,80 @@
 package com.yusufcandmrz.jdk10.localvariabletypeinference;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
 
-    // The "var" reserved type name
-
     public static void main(String[] args) {
+
+        // Before JDK 10
+        // List<String> names = new ArrayList<>();
+
+        // After JDK 10
+        // var names = new ArrayList<String>();
+
+        // Simple variable declaration
+        var number = 10; // Inferred as int
+        System.out.println("Number: " + number);
+
+        // Using with collections
+        var names = List.of("Alice", "Bob", "Charlie");
+        System.out.println("Names: " + names);
+
+        // Using with streams
+        var filteredNames = names.stream()
+                .filter(name -> name.startsWith("A"))
+                .toList();
+        System.out.println("Filtered Names: " + filteredNames);
+
+        // Using in loops
+        for (var name : names) {
+            System.out.println("Name: " + name);
+        }
+
+        // Using with Map.Entry
+        var map = Map.of("key1", "value1", "key2", "value2");
+        for (var entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+        /*
+        Explicitness vs. Readability:
+        Using var excessively can reduce code clarity for unfamiliar developers.
+        Avoid using var when the type isn't obvious from the context.
+        var data = process(); // What is 'data'? This can be unclear.
+
+        Cannot Be Used Everywhere:
+        Cannot declare method parameters, return types, or fields with var
+        // Invalid Usage:
+        // public var calculate() { ... } // Not allowed
+
+        Initialization is Mandatory:
+        // var uninitialized; // Error: Variable must be initialized.
+        */
+
+
+        // *********************************************************
+        // *********************************************************
+        // *********************************************************
+
 
         // "var" anahtar kelimesi ile kullanilir
 
-        String message = "hello string";
+        /* String message = "hello string";
         var messageTwo = "hello local variable type inference";
-        System.out.println(messageTwo.getClass().getSimpleName());
+        System.out.println(messageTwo.getClass().getSimpleName()); */
         // Burada messageTwo degiskeninin tipini belirtmedik. Onun yerine, var olarak isaretledik. Compiler sag tarafta
         // degiskene atanan degere bakarak tipini belirler.
 
         // Bu ozellik sadece baslangic degeri belirtilen yerel degiskenlerde kullanilabilir.
 
-        Map<Integer, String> map = new HashMap<Integer, String>();
+        /* Map<Integer, String> map = new HashMap<>();
         Map<Integer, String> map2 = new HashMap<>();
         var map3 = new HashMap<Integer, String>();
-        var map4 = new HashMap<>();
+        var map4 = new HashMap<>(); */
 
         // "var" bir anahtar kelime degildir
 
