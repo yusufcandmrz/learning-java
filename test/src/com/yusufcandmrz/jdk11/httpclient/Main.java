@@ -3,6 +3,9 @@ package com.yusufcandmrz.jdk11.httpclient;
 public class Main {
 
     /*
+
+    https://www.baeldung.com/java-10-local-variable-type-inference
+
     Before the HTTP Client API, developers relied on:
     HttpURLConnection:
     Verbose and difficult to work with
@@ -13,8 +16,6 @@ public class Main {
 
     Third-Party Libraries:
     Libraries like Apache HttpClient or OkHttp were used to overcome the limitations of HttpURLConnection.
-
-
 
     Examples of Usage
     Synchronous GET Request:

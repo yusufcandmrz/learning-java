@@ -9,6 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // https://www.baeldung.com/java-10-local-variable-type-inference
+
         // Before JDK 10
         // List<String> names = new ArrayList<>();
 
