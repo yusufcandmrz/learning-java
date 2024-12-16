@@ -1,5 +1,9 @@
 package com.yusufcandmrz.jdk16.patternmatching;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class Main {
 
     // For instanceof (JDK 16)
