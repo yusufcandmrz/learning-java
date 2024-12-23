@@ -1,5 +1,7 @@
 package com.yusufcandmrz.records;
 
+import java.util.function.BiFunction;
+
 public record RectangleRecord(double length, double width) {
 
     // Nested record class

@@ -23,13 +23,6 @@ public interface Shape {
 //            throw new IllegalArgumentException("Unrecognized shape");
 //        }
 
-//        // switch statement with pattern matching
-//        return switch (shape) {
-//            case Rectangle rectangle -> 2 * rectangle.length + 2 * rectangle.width;
-//            case Circle circle -> 2 * circle.radius * Math.PI;
-//            default -> throw new IllegalArgumentException("Unrecognized shape");
-//        };
-
         // switch expression with pattern matching
         return switch (shape) {
             case Rectangle rectangle -> 2 * rectangle.length + 2 * rectangle.width;

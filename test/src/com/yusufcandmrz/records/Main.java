@@ -14,9 +14,5 @@ public class Main {
 
         //calling getRotatedRectangleBoundingBox()
         System.out.println(rRecord.getRotatedRectangleBoundingBox(3.4));
-
-        // You can create a generic record class
-        // You can declare a record class that implements one or more interfaces
-        // You can annotate a record class and its individual components
     }
 }

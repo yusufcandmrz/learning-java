@@ -36,7 +36,7 @@ public class Main {
 //        String result = switch (object) {
 //            case CharSequence cs ->  "A sequence of length " + cs.length();
 //            case String s -> "A string " + s.length();
-//        }
+//        };
 //    }
 
 //    // Type Coverage in switch Expressions

@@ -6,7 +6,7 @@ enum Day {
 
 public class Main {
 
-    // switch Statements
+    // Switch Statements
     public static void printIsWeekendWithOldWay(Day today) {
         switch (today) {
             case MONDAY:
@@ -23,13 +23,30 @@ public class Main {
         }
     }
 
+    // Switch Statements with yield
+    public static String printIsWeekendThreeWithOldWay(Day today) {
+        return switch (today) {
+            case MONDAY:
+            case TUESDAY:
+            case WEDNESDAY:
+            case THURSDAY:
+            case FRIDAY:
+                yield "no, it is not";
+            case SATURDAY:
+            case SUNDAY:
+                yield "yes, it is";
+        };
+    }
+
+    // Switch Expressions
     public static void printIsWeekend(Day today) {
         switch (today) {
             case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> System.out.println("no, it is not");
-            case SATURDAY, SUNDAY -> System.out.println("yes, it is");
+            case SATURDAY -> System.out.println("yes, it is");
         }
     }
 
+    // Switch Expressions with return
     public static String printIsWeekendTwo(Day today) {
         return switch (today) {
             case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> "no, it is not";
@@ -37,6 +54,7 @@ public class Main {
         };
     }
 
+    // Switch Expressions with yield
     public static String printIsWeekendThree(Day today) {
         return switch (today) {
             case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> {
@@ -49,15 +67,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // https://www.baeldung.com/java-switch
-
-        // switch Expressions without return
-        // printIsWeekend(Day.MONDAY);
-
-        // switch Expression with return
-        // System.out.println(printIsWeekendTwo(Day.MONDAY));
-
-        // Using yield keyword
-        // System.out.println(printIsWeekendThree(Day.MONDAY));
+//         // Switch Expressions
+//         printIsWeekend(Day.MONDAY);
+//
+//        // Switch Expressions with return
+//        System.out.println(printIsWeekendTwo(Day.MONDAY));
+//
+//        // Switch Expressions with yield
+//        System.out.println(printIsWeekendThree(Day.MONDAY));
     }
 }
