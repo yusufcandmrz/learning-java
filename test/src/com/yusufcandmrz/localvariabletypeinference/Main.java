@@ -18,26 +18,26 @@ public class Main {
 
         // https://docs.oracle.com/en/java/javase/17/language/local-variable-type-inference.html
 
-        URL url = new URL("http://www.oracle.com/");
-        URLConnection conn = url.openConnection();
-        Reader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+//        URL url = new URL("http://www.oracle.com/");
+//        URLConnection conn = url.openConnection();
+//        Reader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
-        var newUrl = new URL("http://www.oracle.com/");
-        var newConn = url.openConnection();
-        var newReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+//        var newUrl = new URL("http://www.oracle.com/");
+//        var newConn = url.openConnection();
+//        var newReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
-        // Local Variables with Initializers
-        var list = new ArrayList<String>();
-        var stream = list.stream();
+//        // Local Variables with Initializers
+//        var list = new ArrayList<String>();
+//        var stream = list.stream();
 
-        // Enhanced for-loop indexes
-        for (var element : list) { }
+//        // Enhanced for-loop indexes
+//        for (var element : list) { }
 
-        // Traditional for-loop indexes
-        for (var counter = 0; counter < 10; counter++) { }
+//        // Traditional for-loop indexes
+//        for (var counter = 0; counter < 10; counter++) { }
 
-        // Try-with-resources variables
-        try (var input = new FileInputStream("file.txt")) {  }
+//        // Try-with-resources variables
+//        try (var input = new FileInputStream("file.txt")) {  }
 
 
         // *************************************************************************************************************

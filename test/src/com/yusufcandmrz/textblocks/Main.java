@@ -45,25 +45,9 @@ public class Main {
 //                """;
 //        System.out.println(exampleFive);
 
-//        // escaping line terminators
-//        String exampleSix = """
-//                separated with\r
-//                carriage return""";
-//        System.out.println(exampleSix.equals("separated with\r\ncarriage return"));
-
 //        String exampleSeven = """
 //                This is a long test which looks to \
 //                have a newline but actually does not""";
 //        System.out.println(exampleSeven);
-
-//        // escaping spaces
-//        String exampleEight = """
-//                line 1...
-//                line 2...\s
-//                """;
-//        System.out.println(exampleEight.equals("line 1...\nline 2...        \n"));
-
-//        // formatting
-//        System.out.println(getFormattedText("hello"));
     }
 }

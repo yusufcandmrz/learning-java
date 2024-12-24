@@ -32,7 +32,7 @@ public interface Shape {
     }
 
     public static boolean bigEnoughRect(Shape shape) {
-//        if(!(shape instanceof Rectangle rectangle)) {
+//        if (!(shape instanceof Rectangle rectangle)) {
 //            return false;
 //        }
 //        return rectangle.length > 5;
