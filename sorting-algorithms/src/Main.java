@@ -40,23 +40,14 @@ public class Main {
         int tempNumber;
         for (int i = 1; i < array.length; i++) {
             tempNumber = array[i];
-            for (int j = i - 1; j >= 0; j--) {
-                if (tempNumber < array[j]) {
-                    array[j + 1] = array[j];
-                    if (j == 0) {
-                        array[j] = tempNumber;
-                    }
-                } else {
-                    array[j + 1] = tempNumber;
-                    break;
-                }
+            int j = i - 1;
+            while (j >= 0 && array[j] > tempNumber) {
+                array[j + 1] = array[j];
+                j--;
             }
+            array[j + 1] = tempNumber;
         }
         return array;
-    }
-
-    public static int[] mergeSort(int[] array) {
-
     }
 
     public static void main(String[] args) {
