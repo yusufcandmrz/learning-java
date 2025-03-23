@@ -15,4 +15,6 @@ public class Volt {
     public void setVolts(int volts) {
         this.volts = volts;
     }
+
+
 }

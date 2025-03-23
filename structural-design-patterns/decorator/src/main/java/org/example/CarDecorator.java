@@ -10,6 +10,5 @@ public class CarDecorator implements Car {
 
     @Override
     public void assemble() {
-
     }
 }
