@@ -14,7 +14,7 @@ public class ChatMediatorImp implements ChatMediator {
     @Override
     public void sendMessage(String message, User user) {
         for (User u : users) {
-            if (u != null) {
+            if (u != user) {
                 u.receive(message);
             }
         }
